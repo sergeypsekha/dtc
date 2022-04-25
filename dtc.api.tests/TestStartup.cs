@@ -16,7 +16,8 @@ namespace dtc.api.tests
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseMiddleware<ProviderStateMiddleware>()
-                .UseMiddleware<AuthorizationTokenReplacementMiddleware>();
+                // .UseMiddleware<AuthorizationTokenReplacementMiddleware>()
+                ;
 
             this.inner.Configure(app, env);
         }
