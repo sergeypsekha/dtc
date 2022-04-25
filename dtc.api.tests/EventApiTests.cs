@@ -5,6 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
+using PactNet;
+using PactNet.Infrastructure.Outputters;
+using PactNet.Verifier;
 
 namespace dtc.api.tests
 {
@@ -22,7 +25,18 @@ namespace dtc.api.tests
         [Fact]
         public void EnsureEventApiHonoursPactWithConsumer()
         {
-            throw new NotImplementedException();
+
+            const string serviceUri = "http://localhost:9222";
+
+            var config = new PactVerifierConfig
+            {
+                Outputters = new List<IOutput>
+                {
+                    new XUnitOutput(this.output)
+                }
+            };
+
+
         }
     }
 }
