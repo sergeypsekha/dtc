@@ -18,5 +18,11 @@ namespace dtc.api.tests
             this.fixture = fixture;
             this.output = output;
         }
+
+        [Fact]
+        public void EnsureEventApiHonoursPactWithConsumer()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
